@@ -5,7 +5,6 @@ import * as moment from 'moment';
 
 // Write TypeScript code!
 const appDiv: HTMLElement = document.getElementById("app");
-appDiv.innerHTML = `<h1>TypeScript Starter</h1>`;
 
 const date = {
   from: "2020-04-06T00:00:00.000Z",
@@ -24,10 +23,10 @@ function generateDateInterval(startDate, endDate, days) {
     dateList.push(currentDate);
     currentDate = generateDateList(currentDate, days);
   }
-  console.log("date list => ", JSON.stringify(dateList));
   return dateList;
 }
 
 const from = moment.utc(date.from);
 const to = moment.utc(date.to);
-generateDateInterval(from, to, 7);
+const dateList = generateDateInterval(from, to, 7);
+appDiv.innerHTML = `${dateList}`;
