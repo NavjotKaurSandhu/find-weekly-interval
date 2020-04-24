@@ -10,6 +10,7 @@ const date = {
   from: "2020-04-06T00:00:00.000Z",
   to: "2020-05-06T23:59:59.000Z"
 };
+
 function generateDateList(startDate, days) {
   const date = new Date(startDate.valueOf());
   date.setDate(date.getDate() + days);
